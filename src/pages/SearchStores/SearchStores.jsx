@@ -1,6 +1,7 @@
 import "./searchStores.scss";
 import StoreItemModal from "../../components/StoreItemModal/StoreItemModal";
 import StoreList from "../../components/StoreList/StoreList";
+import FilterStores from "../../components/FilterStores/FilterStores";
 import { API_URL } from "../../util/api";
 import { Link } from "react-router-dom";
 import React, { useEffect } from "react";
@@ -12,6 +13,7 @@ const SearchStores = () => {
   const [storesArray, setStoresArray] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedStore, setSelectedStore] = useState(null);
+
   const handleClose = () => setModalOpen(false);
   const handleShow = (storeInput) => {
     setModalOpen(true);
@@ -23,6 +25,7 @@ const SearchStores = () => {
       try {
         const reqStoreData = await axios.get(`${API_URL}/stores`);
         const storeData = reqStoreData.data;
+
         setStoresArray(storeData);
       } catch (error) {
         console.log("can't get store list", error);
@@ -30,7 +33,6 @@ const SearchStores = () => {
     };
     fetchStores();
   }, []);
-
   return (
     <>
       <div>
@@ -45,6 +47,9 @@ const SearchStores = () => {
             selected={selectedStore}
           />
         )}
+      </div>
+      <div>
+        <FilterStores />
       </div>
     </>
   );

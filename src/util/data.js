@@ -1,1 +1,16 @@
-export const categories = ["Art", "home Decor", "Oddities"];
+export const categories = [
+  "Furniture",
+  "Jewelry",
+  "Collectibles",
+  "Art",
+  "home Decor",
+  "Oddities",
+  "Lighting",
+  "China",
+  "Books",
+  "Lighting",
+  "Maps",
+  "Apparel",
+  "Mirrors",
+  "Prints",
+];

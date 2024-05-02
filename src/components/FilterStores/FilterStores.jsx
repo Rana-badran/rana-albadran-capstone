@@ -1,8 +1,40 @@
 import "./filterStores.scss";
-import React from "react";
+import React, { useState } from "react";
+import { categories } from "../../util/data";
+import axios from "axios";
+import { API_URL } from "../../util/api";
 
-export default function filterStores() {
-  return <div>filterStores</div>;
-  // Will map thorough the array of categories imported from the data file
-  // return input tags that are type=checkbox, label
-}
+const FilterStores = () => {
+  const handleFilterClick = async (e) => {
+    try {
+      const reqFilterData = await axios.get(
+        `${API_URL}/stores/filter?categories=${e.target.value}`
+      );
+      const filterData = reqFilterData.data;
+      console.log(filterData);
+    } catch (error) {
+      console.log("can't get stores", error);
+    }
+  };
+
+  return (
+    <>
+      <div>
+        <div>
+          {categories.map((category) => (
+            <label>
+              <input
+                onClick={handleFilterClick}
+                type="checkbox"
+                value={category}
+              />{" "}
+              {category}
+            </label>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default FilterStores;
