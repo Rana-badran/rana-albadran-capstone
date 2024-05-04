@@ -1,0 +1,24 @@
+@use "../../styles/partials/fonts.scss";
+@use "../../styles/partials/variables.scss";
+
+.landing-container {
+  font-family: "Courgette-Regular";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8rem;
+  margin-right: 2rem;
+}
+.landing-box {
+  text-align: center;
+  &__title {
+    font-size: 45px;
+  }
+  &__link {
+    text-decoration: none;
+  }
+  &__img-src {
+    height: 50rem;
+    margin-top: 3rem;
+  }
+}

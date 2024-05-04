@@ -1,4 +1,5 @@
 import "./addStore.scss";
+import Header from "../../components/Header/Header";
 import { categories } from "../../util/data";
 import React from "react";
 import { useState, useEffect, useRef } from "react";
@@ -42,59 +43,64 @@ const AddStore = () => {
     }
   }
   return (
-    <form onSubmit={handleFormSubmit}>
-      <h2>Add a New Store</h2>
-      <div>
-        <label>Name of the new store you found</label>
-        <input
-          placeholder="Store Name"
-          value={newStoreName}
-          onChange={(e) => setNewStoreName(e.target.value)}></input>
-      </div>
-      <div>
-        <label>Address</label>
-        <input
-          placeholder=" Full Street Address"
-          value={newAddress}
-          onChange={(e) => setNewAddress(e.target.value)}></input>
-      </div>
-      <div>
-        <label>Add any store site or social media link </label>
-        <input
-          placeholder="add link"
-          value={newMedia}
-          onChange={(e) => setNewMedia(e.target.value)}></input>
-      </div>
-      <div>
-        <label>Please check off categories of items this store sells </label>
-        <select ref={dropDownRef} onChange={handleSelectChnage}>
-          <option value="">Choose a Category</option>
-          {categories.map((category) => (
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
+    <>
+      <header>
+        <Header />
+      </header>
+      <form onSubmit={handleFormSubmit}>
+        <h2>Add a New Store</h2>
         <div>
-          {newCategories.map((selected) => (
-            <span style={{ marginRight: "1rem" }} key={selected}>
-              {selected}
-            </span>
-          ))}
+          <label>Name of the new store you found</label>
+          <input
+            placeholder="Store Name"
+            value={newStoreName}
+            onChange={(e) => setNewStoreName(e.target.value)}></input>
         </div>
-      </div>
-      <div>
-        <button
-          onClick={() => navigate("/stores")}
-          type="button"
-          label="Cancel">
-          Cancel
-        </button>
-        <button type="submit" label="Add Store">
-          Add Store
-        </button>
-      </div>
-    </form>
+        <div>
+          <label>Address</label>
+          <input
+            placeholder=" Full Street Address"
+            value={newAddress}
+            onChange={(e) => setNewAddress(e.target.value)}></input>
+        </div>
+        <div>
+          <label>Add any store site or social media link </label>
+          <input
+            placeholder="add link"
+            value={newMedia}
+            onChange={(e) => setNewMedia(e.target.value)}></input>
+        </div>
+        <div>
+          <label>Please check off categories of items this store sells </label>
+          <select ref={dropDownRef} onChange={handleSelectChnage}>
+            <option value="">Choose a Category</option>
+            {categories.map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+          <div>
+            {newCategories.map((selected) => (
+              <span style={{ marginRight: "1rem" }} key={selected}>
+                {selected}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div>
+          <button
+            onClick={() => navigate("/stores")}
+            type="button"
+            label="Cancel">
+            Cancel
+          </button>
+          <button type="submit" label="Add Store">
+            Add Store
+          </button>
+        </div>
+      </form>
+    </>
   );
 };
 
