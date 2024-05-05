@@ -1,5 +1,5 @@
 @use "../../styles/partials/fonts.scss";
-@use "../../styles/partials/variables.scss";
+@use "../../styles/partials/_variables" as *;
 
 .landing-container {
   font-family: "Courgette-Regular";
@@ -8,6 +8,7 @@
   justify-content: center;
   margin-left: 8rem;
   margin-right: 2rem;
+  color: $main;
 }
 .landing-box {
   text-align: center;
@@ -15,6 +16,9 @@
     font-size: 45px;
   }
   &__link {
+    text-decoration: none;
+  }
+  &__link:visited {
     text-decoration: none;
   }
   &__img-src {

@@ -80,7 +80,7 @@ const SearchStores = () => {
 
   return (
     <>
-      <header>
+      <header className="header">
         <Header />
       </header>
       <div>
