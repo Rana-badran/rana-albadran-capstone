@@ -1,0 +1,18 @@
+@use "../../styles/partials/fonts.scss";
+@use "../../styles/partials/_variables" as *;
+
+.modal-box {
+  font-family: "Cinzel-Regular";
+  &__title {
+    color: $second !important;
+  }
+  &__body {
+    color: $second;
+  }
+  &__link {
+    color: $second;
+  }
+  &__button {
+    color: $second !important;
+  }
+}

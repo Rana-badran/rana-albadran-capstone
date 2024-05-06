@@ -1,8 +1,17 @@
 @use "../../styles/partials/fonts.scss";
 @use "../../styles/partials/_variables" as *;
 
+.add-container {
+  display: flex;
+  align-items: flex-start;
+  &__img {
+    height: 25rem;
+    margin-top: 7rem;
+    margin-left: 4rem;
+  }
+}
 .form-container {
-  margin: 8rem;
+  margin: 3rem 3rem 0rem 7rem;
   &__title {
     font-family: "Courgette-Regular";
     color: $main;

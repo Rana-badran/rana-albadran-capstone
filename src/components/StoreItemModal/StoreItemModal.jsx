@@ -1,3 +1,4 @@
+import "./storeItemModal.scss";
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -5,17 +6,23 @@ import { Link } from "react-router-dom";
 export default function StoreItemModal({ onCloseClick, modal, selected }) {
   //   console.log(selected);
   return (
-    <Modal show={modal} onHide={onCloseClick}>
+    <Modal className="modal-box" show={modal} onHide={onCloseClick}>
       <Modal.Header closeButton>
-        <Modal.Title>{selected.name}</Modal.Title>
+        <Modal.Title className="modal-box__title">{selected.name}</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body className="modal-box__body">
         {selected.address}
         <br />
-        <Link>{selected.media}</Link>
+        <Link to={selected.media} className="modal-box__link">
+          {" "}
+          {selected.media}{" "}
+        </Link>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={onCloseClick}>
+        <Button
+          className="modal-box__button"
+          variant="secondary"
+          onClick={onCloseClick}>
           Close
         </Button>
       </Modal.Footer>

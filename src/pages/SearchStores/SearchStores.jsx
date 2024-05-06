@@ -80,9 +80,9 @@ const SearchStores = () => {
 
   return (
     <>
-      {/* <header className="header">
+      <header className="header">
         <Header />
-      </header> */}
+      </header>
       <div className="search-container">
         <div className="search-container__filter">
           <FilterStoreList onFilterChange={handleFilterChanged} />

@@ -38,7 +38,8 @@ const StoreMap = ({ data }) => {
               <Popup
                 style={{ width: "fit-content" }}
                 className="map-container__popup">
-                {store.name} <br /> {store.address} <Link>{store.media}</Link>
+                {store.name} <br /> {store.address}{" "}
+                <Link to={store.media}>{store.media}</Link>
               </Popup>
             </Marker>
           ))}

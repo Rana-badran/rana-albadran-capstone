@@ -1,4 +1,4 @@
-import "./storeList.scss";
+import "./storelist.scss";
 import OilLampImg from "../../assets/images/OilLampImg.png";
 import Gramophone from "../../assets/images/Gramophone.png";
 

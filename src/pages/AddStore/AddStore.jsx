@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { API_URL } from "../../util/api";
 import { useNavigate } from "react-router-dom";
+import ItemsImg from "../../assets/images/ItemsImg.png";
 
 const AddStore = () => {
   const navigate = useNavigate();
@@ -48,96 +49,97 @@ const AddStore = () => {
   }
   return (
     <>
-      {/* <header>
+      <header>
         <Header />
-      </header> */}
-      <form className="form-container" onSubmit={handleFormSubmit}>
-        <h2 className="form-container__title">Add a New Store</h2>
-        <div>
-          <label className="form-container__label">
-            Name of the new store you found
-          </label>
-          <input
-            className="form-container__input"
-            placeholder="Store Name"
-            value={newStoreName}
-            onChange={(e) => setNewStoreName(e.target.value)}></input>
-        </div>
-        <div>
-          <label className="form-container__label">Address</label>
-          <input
-            className="form-container__input"
-            placeholder=" Full Street Address"
-            value={newAddress}
-            onChange={(e) => setNewAddress(e.target.value)}></input>
-        </div>
-        <div>
-          <label className="form-container__label">Latitude</label>
-          <input
-            className="form-container__input"
-            placeholder=" Latitude"
-            value={newlat}
-            onChange={(e) => setNewlat(e.target.value)}></input>
-        </div>
-        <div>
-          <label className="form-container__label">Longitude</label>
-          <input
-            className="form-container__input"
-            placeholder=" Longitude"
-            value={newlong}
-            onChange={(e) => setNewlong(e.target.value)}></input>
-        </div>
-        <div>
-          <label className="form-container__label">
-            Add any store site or social media link{" "}
-          </label>
-          <input
-            className="form-container__input"
-            placeholder="Add link"
-            value={newMedia}
-            onChange={(e) => setNewMedia(e.target.value)}></input>
-        </div>
-        <div>
-          <label className="form-container__label">
-            Select categories of items this store sells{" "}
-          </label>
-          <select
-            className="form-container__input"
-            ref={dropDownRef}
-            onChange={handleSelectChnage}>
-            <option className="form-container__option" value="">
-              Choose a Category
-            </option>
-            {categories.map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
+      </header>
+      <div className="add-container">
+        <form className="form-container" onSubmit={handleFormSubmit}>
+          <h2 className="form-container__title">Add a New Store</h2>
           <div>
-            {newCategories.map((selected) => (
-              <span style={{ marginRight: "1rem" }} key={selected}>
-                {selected}
-              </span>
-            ))}
+            <label className="form-container__label">Name of Store</label>
+            <input
+              className="form-container__input"
+              placeholder="Store Name"
+              value={newStoreName}
+              onChange={(e) => setNewStoreName(e.target.value)}></input>
           </div>
-        </div>
-        <div className="form-container__button-box">
-          <button
-            className="form-container__button"
-            onClick={() => navigate("/stores")}
-            type="button"
-            label="Cancel">
-            Cancel
-          </button>
-          <button
-            className="form-container__button"
-            type="submit"
-            label="Add Store">
-            Add Store
-          </button>
-        </div>
-      </form>
+          <div>
+            <label className="form-container__label">Address</label>
+            <input
+              className="form-container__input"
+              placeholder=" Full Street Address"
+              value={newAddress}
+              onChange={(e) => setNewAddress(e.target.value)}></input>
+          </div>
+          <div>
+            <label className="form-container__label">Latitude</label>
+            <input
+              className="form-container__input"
+              placeholder=" Latitude"
+              value={newlat}
+              onChange={(e) => setNewlat(e.target.value)}></input>
+          </div>
+          <div>
+            <label className="form-container__label">Longitude</label>
+            <input
+              className="form-container__input"
+              placeholder=" Longitude"
+              value={newlong}
+              onChange={(e) => setNewlong(e.target.value)}></input>
+          </div>
+          <div>
+            <label className="form-container__label">
+              Add any store site or social media link{" "}
+            </label>
+            <input
+              className="form-container__input"
+              placeholder="Add link"
+              value={newMedia}
+              onChange={(e) => setNewMedia(e.target.value)}></input>
+          </div>
+          <div>
+            <label className="form-container__label">
+              Select categories of items this store sells{" "}
+            </label>
+            <select
+              className="form-container__input"
+              ref={dropDownRef}
+              onChange={handleSelectChnage}>
+              <option className="form-container__option" value="">
+                Choose a Category
+              </option>
+              {categories.map((category) => (
+                <option key={category} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+            <div>
+              {newCategories.map((selected) => (
+                <span style={{ marginRight: "1rem" }} key={selected}>
+                  {selected}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="form-container__button-box">
+            <button
+              className="form-container__button"
+              onClick={() => navigate("/stores")}
+              type="button"
+              label="Cancel">
+              Cancel
+            </button>
+            <button
+              className="form-container__button"
+              type="submit"
+              label="Add Store">
+              Add Store
+            </button>
+          </div>
+        </form>
+        <img className="add-container__img" src={ItemsImg} />
+      </div>
     </>
   );
 };
