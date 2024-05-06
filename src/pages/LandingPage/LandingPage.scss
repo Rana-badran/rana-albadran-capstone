@@ -14,12 +14,19 @@
   text-align: center;
   &__title {
     font-size: 45px;
+    color: $main;
+  }
+  &__body {
+    font-size: 25px;
   }
   &__link {
     text-decoration: none;
   }
   &__link:visited {
     text-decoration: none;
+  }
+  &__link-text {
+    color: $main;
   }
   &__img-src {
     height: 50rem;

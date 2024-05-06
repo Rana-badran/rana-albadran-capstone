@@ -2,13 +2,13 @@
 
 # Project Title
 
-Past Time’s Gems
+Past Time’s Treasures
 
 ## Overview
 
 An antique store directory to find stores in the city
 
-- Gather 30 geolocations in the GTA
+- Gather 20 geolocations in the GTA
 - Users can share newfound hidden gems to add to the list
 
 ### Problem/ inspiration
@@ -48,6 +48,11 @@ As a user, I want to be able to see the list of antique stores on a map and be a
 ### APIs
 
 No external APIs will be used
+
+## Component Libraries
+
+- used Leftlet for the map component
+- Used Bootstrap for the modal component
 
 ### Sitemap
 
@@ -110,7 +115,7 @@ By feature:
 - Feature: View store
 
   - View store details
-  - Create GET /stores/:id
+  - Create GET /stores/
 
 - Feature: add store/dealer - Create POST/ stores endpoint
 
