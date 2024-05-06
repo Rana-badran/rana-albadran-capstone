@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function StoreItemModal({ onCloseClick, modal, selected }) {
   //   console.log(selected);
@@ -8,7 +9,11 @@ export default function StoreItemModal({ onCloseClick, modal, selected }) {
       <Modal.Header closeButton>
         <Modal.Title>{selected.name}</Modal.Title>
       </Modal.Header>
-      <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+      <Modal.Body>
+        {selected.address}
+        <br />
+        <Link>{selected.media}</Link>
+      </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={onCloseClick}>
           Close

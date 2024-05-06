@@ -1,0 +1,27 @@
+@use "../../styles/partials/fonts.scss";
+@use "../../styles/partials/_variables" as *;
+
+.map-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.leaflet-popup-content {
+  width: fit-content !important;
+}
+.map-container {
+  width: 93%;
+  border-radius: 2rem;
+  margin-top: 3rem;
+  //   margin-left: 4.3rem;
+  &__popup {
+    font-family: "Cinzel-Regular";
+    font-weight: 700;
+    color: $main;
+  }
+}
+.img-section {
+  &__img {
+    height: 8rem;
+  }
+}

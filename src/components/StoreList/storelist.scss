@@ -1,0 +1,46 @@
+@use "../../styles/partials/fonts.scss";
+@use "../../styles/partials/_variables" as *;
+
+.main-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.img-box {
+  &__img {
+    height: 23rem;
+    margin-top: 16rem;
+  }
+}
+.list-container {
+  color: $main;
+  text-align: center;
+  margin-top: 2rem;
+  margin-top: 2rem;
+  margin-left: -7rem;
+  &__title {
+    font-family: "Courgette-Regular";
+    color: $main;
+  }
+  &__list {
+    font-family: "Cinzel-Regular";
+    font-weight: 700;
+    margin-right: 2rem;
+    overflow: scroll;
+    height: 600px;
+  }
+  &__items {
+    cursor: pointer;
+    list-style-type: none;
+    color: $main;
+    margin-bottom: 0.3rem;
+  }
+  &__items:hover {
+    color: $second;
+  }
+}
+.img-container {
+  &__img {
+    height: 20rem;
+    margin-top: 6rem;
+  }
+}

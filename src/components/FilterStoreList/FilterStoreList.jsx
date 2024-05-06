@@ -7,11 +7,12 @@ import { API_URL } from "../../util/api";
 const FilterStoreList = ({ onFilterChange }) => {
   return (
     <>
-      <div>
-        <div>
+      <div className="filter-container">
+        <div className="filter-container__box">
           {categories.map((category) => (
-            <label>
+            <label className="filter-container__label">
               <input
+                className="filter-container__input"
                 onChange={onFilterChange}
                 type="checkbox"
                 value={category}

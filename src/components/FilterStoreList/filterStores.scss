@@ -1,0 +1,15 @@
+@use "../../styles/partials/fonts.scss";
+@use "../../styles/partials/_variables" as *;
+
+.filter-container {
+  text-align: center;
+  &__label {
+    font-family: "Cinzel-Regular";
+    font-weight: 700;
+    color: $main;
+    margin-right: 1rem;
+  }
+  &__box {
+    padding: 1rem 5rem;
+  }
+}
