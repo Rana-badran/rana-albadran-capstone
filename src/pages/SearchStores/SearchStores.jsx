@@ -80,15 +80,29 @@ const SearchStores = () => {
 
   return (
     <>
-      <header className="header">
+      {/* <header className="header">
         <Header />
-      </header>
-      <div>
-        <Link to="/add"> Add a new store</Link>
-      </div>
-      <button onClick={handleViewChange}>Toggle</button>
-      <div>
-        <FilterStoreList onFilterChange={handleFilterChanged} />
+      </header> */}
+      <div className="search-container">
+        <div className="search-container__filter">
+          <FilterStoreList onFilterChange={handleFilterChanged} />
+        </div>
+        <div className="search-container__button-box">
+          <div>
+            <button
+              className="search-container__button"
+              onClick={handleViewChange}>
+              Change Stores View
+            </button>
+          </div>
+          <div>
+            <Link to="/add">
+              <button className="search-container__button">
+                Add a New Store
+              </button>
+            </Link>
+          </div>
+        </div>
       </div>
       <div>{view === "map" && <StoreMap data={storesArray} />}</div>
 

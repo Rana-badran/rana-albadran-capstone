@@ -13,6 +13,8 @@ const AddStore = () => {
   const [newStoreName, setNewStoreName] = useState("");
   const [newAddress, setNewAddress] = useState("");
   const [newMedia, setNewMedia] = useState("");
+  const [newlong, setNewlong] = useState("");
+  const [newlat, setNewlat] = useState("");
   const [newCategories, setNewCategories] = useState([]);
 
   function handleSelectChnage(e) {
@@ -31,6 +33,8 @@ const AddStore = () => {
       name: newStoreName,
       address: newAddress,
       media: newMedia,
+      latitude: newlat,
+      longitude: newlong,
       categories: JSON.stringify(newCategories),
     };
 
@@ -44,36 +48,66 @@ const AddStore = () => {
   }
   return (
     <>
-      <header>
+      {/* <header>
         <Header />
-      </header>
-      <form onSubmit={handleFormSubmit}>
-        <h2>Add a New Store</h2>
+      </header> */}
+      <form className="form-container" onSubmit={handleFormSubmit}>
+        <h2 className="form-container__title">Add a New Store</h2>
         <div>
-          <label>Name of the new store you found</label>
+          <label className="form-container__label">
+            Name of the new store you found
+          </label>
           <input
+            className="form-container__input"
             placeholder="Store Name"
             value={newStoreName}
             onChange={(e) => setNewStoreName(e.target.value)}></input>
         </div>
         <div>
-          <label>Address</label>
+          <label className="form-container__label">Address</label>
           <input
+            className="form-container__input"
             placeholder=" Full Street Address"
             value={newAddress}
             onChange={(e) => setNewAddress(e.target.value)}></input>
         </div>
         <div>
-          <label>Add any store site or social media link </label>
+          <label className="form-container__label">Latitude</label>
           <input
-            placeholder="add link"
+            className="form-container__input"
+            placeholder=" Latitude"
+            value={newlat}
+            onChange={(e) => setNewlat(e.target.value)}></input>
+        </div>
+        <div>
+          <label className="form-container__label">Longitude</label>
+          <input
+            className="form-container__input"
+            placeholder=" Longitude"
+            value={newlong}
+            onChange={(e) => setNewlong(e.target.value)}></input>
+        </div>
+        <div>
+          <label className="form-container__label">
+            Add any store site or social media link{" "}
+          </label>
+          <input
+            className="form-container__input"
+            placeholder="Add link"
             value={newMedia}
             onChange={(e) => setNewMedia(e.target.value)}></input>
         </div>
         <div>
-          <label>Please check off categories of items this store sells </label>
-          <select ref={dropDownRef} onChange={handleSelectChnage}>
-            <option value="">Choose a Category</option>
+          <label className="form-container__label">
+            Select categories of items this store sells{" "}
+          </label>
+          <select
+            className="form-container__input"
+            ref={dropDownRef}
+            onChange={handleSelectChnage}>
+            <option className="form-container__option" value="">
+              Choose a Category
+            </option>
             {categories.map((category) => (
               <option key={category} value={category}>
                 {category}
@@ -88,14 +122,18 @@ const AddStore = () => {
             ))}
           </div>
         </div>
-        <div>
+        <div className="form-container__button-box">
           <button
+            className="form-container__button"
             onClick={() => navigate("/stores")}
             type="button"
             label="Cancel">
             Cancel
           </button>
-          <button type="submit" label="Add Store">
+          <button
+            className="form-container__button"
+            type="submit"
+            label="Add Store">
             Add Store
           </button>
         </div>
